@@ -1,10 +1,9 @@
-
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List; 
 
 public class ExpenseTrackerView extends JFrame {
@@ -14,7 +13,7 @@ public class ExpenseTrackerView extends JFrame {
   private JTextField amountField;
   private JTextField categoryField;
   private DefaultTableModel model;
-  private List<Transaction> transactions = new ArrayList<>();
+  private final List<Transaction> transactions = new ArrayList<>();
 
   
 
@@ -121,7 +120,7 @@ public class ExpenseTrackerView extends JFrame {
   }
 
   public List<Transaction> getTransactions() {
-    return transactions;
+    return Collections.unmodifiableList(new ArrayList<>(transactions));
   }
   
   public void addTransaction(Transaction t) {
