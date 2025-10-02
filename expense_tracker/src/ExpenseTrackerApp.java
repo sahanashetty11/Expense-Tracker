@@ -1,3 +1,5 @@
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,6 +29,14 @@ public class ExpenseTrackerApp {
       // Get transaction data from view
       double amount = view.getAmountField(); 
       String category = view.getCategoryField();
+
+      // Handling Validation
+      List<String> validatedData = InputValidation.validateAmountAndCategory(amount, category);
+      if (!validatedData.isEmpty()) {
+        String msg = "Please fix the following:\n- " + String.join("\n- ", validatedData);
+        JOptionPane.showMessageDialog(view, msg, "Invalid input", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
 
       // Create transaction object
       Transaction t = new Transaction(amount, category);
