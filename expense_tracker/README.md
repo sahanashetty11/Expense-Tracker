@@ -39,4 +39,28 @@ Here are some examples of violating ```non-functional``` requirements:
 • The app should declare the following packages and their classes: model, view, controller. 
 
 ## Understandibility
-For the understandability section, we will be inspecting your git log. You should include either the .git folder or else a gitLog.(pdf | txt).
+Brief Explaination of the project:
+# Expense Tracker (Swing, MVC-lite)
+
+A small desktop app to add and view daily transactions.
+
+## Features
+- **Add transactions** with amount, category, and timestamp.
+- **Table view** with auto-calculated **Total** row.
+- **Input validation** (`InputValidation.java`)
+  - `amount`: numeric, `0 < amount < 1000`
+  - `category`: one of `food`, `travel`, `bills`, `entertainment`, `other`
+- **Incremental updates** and clean error messages for invalid input.
+- **Javadoc**: API documentation generated to the `jdoc/` folder.
+
+## Code Layout
+- `ExpenseTrackerApp.java` — app entry point; wires up UI and validation.
+- `ExpenseTrackerView.java` — Swing UI and table rendering.
+- `Transaction.java` — immutable transaction model.
+- `InputValidation.java` — validation utilities.
+
+## Running
+Compile and run from the project root (no external deps):
+```bash
+javac *.java
+java ExpenseTrackerApp
