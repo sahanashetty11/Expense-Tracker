@@ -4,6 +4,8 @@ import org.junit.Test;
 import javax.swing.table.DefaultTableModel;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.util.List;
 
 public class ExpenseTrackerTest {
 
@@ -38,5 +40,13 @@ public class ExpenseTrackerTest {
         assertEquals(1, transactions.size());
         assertEquals(amount, transactions.get(0).getAmount(), 0.001);
         assertEquals(category, transactions.get(0).getCategory());
+    }
+
+    @Test
+    public void testInValidAmountAndCategory() {
+        List<String> errs = InputValidation.validateAmountAndCategory(1020, "groceries");
+        assertEquals(2, errs.size());
+        assertTrue(errs.get(0).equals("Amount must be a number greater than 0 and less than 1000."));
+        assertTrue(errs.get(1).equals("Allowed categories are: food, travel, bills, entertainment, other."));
     }
 }
