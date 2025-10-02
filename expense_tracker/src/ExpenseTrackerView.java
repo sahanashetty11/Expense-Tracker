@@ -1,10 +1,9 @@
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List; 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel; 
 
 public class ExpenseTrackerView extends JFrame {
 
@@ -15,8 +14,7 @@ public class ExpenseTrackerView extends JFrame {
   private DefaultTableModel model;
   private final List<Transaction> transactions = new ArrayList<>();
 
-  
-
+  //Getters and Setters
   public JTable getTransactionsTable() {
     return transactionsTable;
   }
@@ -129,7 +127,4 @@ public class ExpenseTrackerView extends JFrame {
     refresh();
   }
   
-
-
-  // Other view methods
 }

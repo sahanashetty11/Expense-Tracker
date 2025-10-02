@@ -44,7 +44,7 @@ Brief Explaination of the project:
 
 A small desktop app to add and view daily transactions.
 
-## Features
+### Features
 - **Add transactions** with amount, category, and timestamp.
 - **Table view** with auto-calculated **Total** row.
 - **Input validation** (`InputValidation.java`)
@@ -53,14 +53,30 @@ A small desktop app to add and view daily transactions.
 - **Incremental updates** and clean error messages for invalid input.
 - **Javadoc**: API documentation generated to the `jdoc/` folder.
 
-## Code Layout
+### Code Layout
 - `ExpenseTrackerApp.java` — app entry point; wires up UI and validation.
 - `ExpenseTrackerView.java` — Swing UI and table rendering.
 - `Transaction.java` — immutable transaction model.
 - `InputValidation.java` — validation utilities.
 
-## Running
+
+### Running
 Compile and run from the project root (no external deps):
 ```bash
 javac *.java
 java ExpenseTrackerApp
+```
+
+# Outline of All Java Classes
+Note: All the screenshots are places under images/ folder.
+### ExpenseTrackerApp
+![Expense Tracker](images/expenseTrackerApp.png)
+
+### ExpenseTrackerView
+![Expense View](images/expenseTrackerView.png)
+
+### InputValidation
+![Input Validation](images/inputValidation.png)
+
+### Transaction
+![Transaction](images/transaction.png)
