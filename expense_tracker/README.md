@@ -40,7 +40,7 @@ Here are some examples of violating ```non-functional``` requirements:
 
 ## Understandibility
 Brief Explaination of the project:
-# Expense Tracker (Swing, MVC-lite)
+## Expense Tracker (Swing, MVC-lite)
 
 A small desktop app to add and view daily transactions.
 
